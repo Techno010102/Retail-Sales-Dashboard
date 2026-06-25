@@ -9,6 +9,7 @@ SELECT
   --  ,[CurrencyKey]
   --  ,[SalesTerritoryKey]
   [SalesOrderNumber], 
+  [OrderQuantity],
   --  [SalesOrderLineNumber], 
   --  ,[RevisionNumber]
   --  ,[OrderQuantity], 
