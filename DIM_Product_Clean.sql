@@ -25,6 +25,7 @@ SELECT
   --      ,[Class]
   --      ,[Style] 
   p.[ModelName] AS [Product Model Name], 
+  p.[ListPrice] AS [List Price],
   --      ,[LargePhoto]
   p.[EnglishDescription] AS [Product Description], 
   --      ,[FrenchDescription]
