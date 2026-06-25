@@ -4,6 +4,7 @@ SELECT
   [FullDateAlternateKey] AS Date, 
   --[DayNumberOfWeek], 
   [EnglishDayNameOfWeek] AS Day, 
+  [WeekNumberOfYear] AS WeekNo,
   --[SpanishDayNameOfWeek], 
   --[FrenchDayNameOfWeek], 
   --[DayNumberOfMonth], 
