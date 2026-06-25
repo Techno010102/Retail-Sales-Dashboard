@@ -1,37 +1,36 @@
-# SalesAnalysis_SQL_PowerBI
+# Retail Sales Analysis | SQL + Power BI
 
-### Setup
-- This project requires SQL Server (SQL Express), Power BI Desktop
-- We will work with backup Data Warehouse (DW) data and Lightweight (LT) data. Obtain data and restore following instructions from [here.](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms)
-- Compare DW and LT data to understand the difference between structured and unstructured data. We will primarily be working with Data Warehouse data.
-- Update Data Warehouse data using [sql script.](https://github.com/techtalkcorner/SampleDemoFiles/blob/master/Database/AdventureWorks/Update_AdventureWorksDW_Data.sql)
+## Overview
+This project analyzes retail sales data to uncover trends in revenue, product performance, and customer behavior. I used T-SQL to clean and prepare the raw data, then built an interactive Power BI dashboard to visualize the results.
 
-### Business Request & User Stories
-- Read the sample business request, demand overview & filled-out user stories to understand the problem we are trying to solve with Data Analysis and what we consider as a solution.
+## What I Did
+- Reviewed the business request and user stories to understand what questions the dashboard needed to answer
+- Identified the relevant FACT and DIMENSION tables from the source database
+- Wrote T-SQL queries to clean, filter, and transform the data — including column renaming, string functions, CASE statements, NULL handling, and multi-table joins
+- Extended the base queries to capture additional fields for deeper analysis:
+  - Added **Yearly Income** to the customer table to enable income-based segmentation
+  - Added **List Price** to the product table to support pricing/category analysis
+  - Added **Week Number** to the date table for weekly (not just monthly) trend analysis
+  - Added **Order Quantity** to the sales fact table to analyze units sold, not just revenue
+- Exported cleaned tables and loaded them into Power BI
+- Built a relational data model connecting Customer, Product, Calendar, and Sales tables
+- Created an interactive dashboard with bar charts, line charts, a map visual, and top-10 rankings
 
-### Clean the Data using T-SQL
-- Understand the difference between FACT tables & Dimension tables.
-- Identify which tables in the data are of interest with the help of the Business Request form.
-- Choose which columns are of interest to export by preparing and transforming these columns in SQL using concepts such as: renaming columns, combining columns, commenting in SQL script, formatting of SQL statements, WHERE clause, ORDER BY, LEFT JOIN, CASE() function and ISNULL() function. 
+## Tools Used
+SQL Server (T-SQL), Power BI Desktop
 
-### Create Dashboard in Power BI
-- Load Data
-- Organize & Prepare Tables
-- Connect Tables for Data Model
-- Import Fact_Budget
-- Calculation Measures
-- Dashboard Design
-- Import Custom Visual
-- Measure Table
-- Pie Chart
-- Line Chart
-- Bar Charts
-- Map Graph
-- Top 10 Graphs
-- Gradient Bar Chart Color
-- Customer Details
-- Pivot Table
+## Key Concepts Applied
+- Star schema design (FACT vs. DIMENSION tables)
+- Table joins (LEFT JOIN across multiple related tables)
+- Data cleaning: CASE statements, ISNULL, string functions
+- Dynamic vs. static date filtering
+- Power BI data modeling and dashboard design
 
-### Dashboard
-- [Download the file](https://github.com/AsifRashid01/SalesAnalysis_SQL_PowerBI/blob/main/Sales%20Report.pbix) and open in Power BI Desktop for interactive viewing.
-- [See a screenshot](https://github.com/AsifRashid01/SalesAnalysis_SQL_PowerBI/blob/main/Sales%20Report.pdf) of the Dashboard in pdf.
+## Files in this Repo
+- `DIM_Customer_Clean.sql`, `DIM_Product_Clean.sql`, `DIM_Calendar_Clean.sql`, `FACT_InternetSales_Clean.sql` — SQL scripts for data cleaning
+- `*.csv` — exported cleaned datasets
+- `Sales Report.pbix` — Power BI dashboard file
+- `Sales Report.pdf` — static screenshot of the dashboard
+
+## Dashboard
+Download `Sales Report.pbix` from this repo and open in Power BI Desktop for the interactive version, or view `Sales Report.pdf` for a static screenshot.
